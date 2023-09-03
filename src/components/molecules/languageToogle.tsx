@@ -8,7 +8,7 @@ export const LanguageToogle = () => {
     <Switch
       onChange={onChange}
       current={isPT}
-      images={[<GiBrazilFlag key={"sun"} />, <LiaFlagUsaSolid key={"moon"} />]}
+      images={[<LiaFlagUsaSolid key={"sun"} />, <GiBrazilFlag key={"moon"} />]}
     />
   );
 };
