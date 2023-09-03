@@ -8,6 +8,7 @@ export const Switch = ({ current, images, onChange }: props) => {
   return (
     <div
       onClick={() => onChange()}
+      style={{ marginLeft: '1rem'}}
       className={`dark:bg-dprimary text-background justify-between px-[calc(3px)] md:w-16 md:h-6 md:after:h-5  md:after:w-5 w-12 h-5 bg-primary rounded-full flex items-center cursor-pointer relative after:content-[''] after:absolute after:w-4 after:h-4 after:transition-all after:rounded-full after:bg-background 
       ${
         current

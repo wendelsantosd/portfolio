@@ -1,8 +1,12 @@
+import { useLanguage } from "../../contexts/language";
 import { MainButton } from "../atoms/mainButton";
 import { MainTitle } from "../atoms/mainTitle";
 import { Paragraph } from "../atoms/paragraph";
+import { mainContentDataEN, mainContentDataPT } from "./constants/mainContent.constants";
 
 export const MainContent = () => {
+  const { isPT } = useLanguage();
+
   const scrollToAbout = () => {
     const element = document.getElementById("about");
     const elementRect = element?.getBoundingClientRect();
@@ -21,10 +25,10 @@ export const MainContent = () => {
           Santos
         </i>
       </MainTitle>
-      <Paragraph>Desenvolvedor Full Stack Javascript</Paragraph>
-      <Paragraph>Engenheiro de Software</Paragraph>
+      <Paragraph>{isPT ?  mainContentDataPT.description_1 : mainContentDataEN.description_1}</Paragraph>
+      <Paragraph>{isPT ? mainContentDataPT.description_2 : mainContentDataEN.description_2}</Paragraph>
       <div className="toUp opacity-0">
-        <MainButton onclick={scrollToAbout}>Sobre mim</MainButton>
+        <MainButton onclick={scrollToAbout}>{isPT ? mainContentDataPT.about : mainContentDataEN.about}</MainButton>
       </div>
     </div>
   );
