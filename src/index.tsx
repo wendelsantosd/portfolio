@@ -1,16 +1,22 @@
-import { useData } from "./contexts/data";
-import { Error } from "./pages/error";
+import { useEffect, useState } from "react";
 import { Home } from "./pages/home";
 import { Loading } from "./pages/loading";
 
 export const Index = () => {
-  const data = useData();
+  const [page, setPage] = useState(false)
+
+  const loading = () => setInterval(() => {
+    setPage(true)
+  }, 1000)
+
+  useEffect(() => {
+    loading()
+  }, [])
+
   return (
     <div className="bg-background dark:bg-dbackground font-main max-w-screen min-h-screen box-border overflow-x-hidden flex justify-center">
       <div className="w-full overflow-x-hidden">
-        {data.loading && <Loading />}
-        {data.data && <Home />}
-        {data.error && <Error />}
+        {page ? <Home /> : <Loading />}
       </div>
     </div>
   );

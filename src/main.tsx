@@ -5,11 +5,11 @@ import { DataContext } from "./contexts/data";
 import { LanguageContext } from "./contexts/language";
 import { ThemeContext } from "./contexts/theme";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <DataContext>
+  // <DataContext>
     <LanguageContext>
       <ThemeContext>
         <Index />
       </ThemeContext>
     </LanguageContext>
-  </DataContext>
+  // </DataContext>
 );
