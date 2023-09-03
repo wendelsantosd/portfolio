@@ -1,4 +1,3 @@
-import { useData } from "../../contexts/data";
 import { Paragraph } from "../atoms/paragraph";
 interface props {
   list: string[];
